@@ -10,6 +10,10 @@
 // ==/UserScript==
 
 $(function() {
+  run();
+});
+
+function run() {
     const wait = async selector => {
         while (Object.keys($("a:contains('View map')")).length == 2) {
             await new Promise( resolve => requestAnimationFrame(resolve) )
@@ -46,7 +50,12 @@ $(function() {
         const postCode = text.substring(spacePos, text.indexOf("Australia")).trim();
 
         if (ruralExpanded.includes(postCode)) {
-            $("a:contains('View map')").parent().parent().find("p").append("<div style='border-radius: 2px; background-color: #FF6347; color: white; width: 100%; margin-top: 10px; padding-left: 5px; width:55px'>RURAL</div>");
+            $('.lashjungle-rural').remove();
+            $("a:contains('View map')").parent().parent().find("p").append("<div class='lashjungle-rural' style='border-radius: 2px; background-color: #FF6347; color: white; width: 100%; margin-top: 10px; padding-left: 5px; width:55px'>RURAL</div>");
         }
     });
-});
+
+   requestAnimationFrame(run);
+}
+
+requestAnimationFrame(run);
