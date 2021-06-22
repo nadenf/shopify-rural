@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        Shopify Rural
 // @namespace   lashjungle
-// @version     1.0
+// @version     1.0.1
 // @description Shows the Rural flag within Shopify
 // @author      Nadenf
 // @match       https://dailey-dose-of-lashes.myshopify.com/admin/orders/*
